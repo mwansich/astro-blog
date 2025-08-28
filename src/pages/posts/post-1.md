@@ -1,5 +1,5 @@
 ---
-
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My first Blog Post'
 pubDate: 2025-08-28
 description: 'This is the first post of my new Astro blog.'
@@ -9,10 +9,6 @@ image:
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]
 ---
-[Home](/) [About](/about) [Blog](/blog)
-# My first Blog Post
-Published on: 2025-08-28
-
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
 ## What I've accomplished
@@ -26,5 +22,3 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
-
-<button onclick="history.back()">Go Back</button>
