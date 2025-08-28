@@ -11,3 +11,5 @@ tags: ["astro", "blogging", "learning in public", "successes"]
 [Home](/) [About](/about) [Blog](/blog)
 # Week 2
 After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
+
+<button onclick="history.back()">Go Back</button>
