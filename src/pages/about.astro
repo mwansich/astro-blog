@@ -1,22 +1,24 @@
 ---
+import '../styles/global.css';
+
 const pageTitle = "About Me";
 
 const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
+  firstName: "M",
+  country: "Germany",
+  occupation: "Freelancer",
   hobbies: ["photography", "birdwatching", "baseball"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skills = ["HTML", "CSS", "JavaScript", "Python", "C", "Astro", "Writing Docs"];
 
 const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "pink";
+const skillColor = "purple";
 const fontWeight = "bold";
-const textCase = "uppercase"
+const textCase = "none"
 ---
 
 <html lang="en">
@@ -27,10 +29,6 @@ const textCase = "uppercase"
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
         <style define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
             .skill {
                 color: var(--skillColor);
                 font-weight: var(--fontWeight);

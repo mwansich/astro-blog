@@ -8,5 +8,6 @@ image:
 pubDate: 2025-08-28
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---
+[Home](/) [About](/about) [Blog](/blog)
 # Next Step
 It wasn't always smooth sailing, but I'm enjoying building with Astro. And, the [Discord community](https://astro.build/chat) is really friendly and helpful!
