@@ -1,5 +1,5 @@
 html {
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
   font-family: sans-serif;
 }
 
@@ -15,30 +15,24 @@ body {
   box-sizing: border-box;
 }
 
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
   color: purple;
 }
 
-.back {
-    display: inline-block;
-    padding: 15px 20px;
-    background-color: purple;
-    color: white;
-    border: solid;
-    border-color: purple;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-size: 1.2rem;
-    text-decoration: none;
-    text-align: center;
-}
-
-.back:hover, .back:focus {
+a {
     color: purple;
-    background-color: white;
 }
 
 /* nav styles */
@@ -63,23 +57,40 @@ h1 {
 }
 
 .nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: purple;
-  margin-bottom: 5px;
-  border: solid;
+    display: block;
+    padding: 15px 20px;
+    background-color: white;
+    color: purple;
+    border: solid;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.tag, .back, .footerlinks a {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: white;
+    color: purple;
+    border: solid;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .nav-links a:hover,
-.nav-links a:focus {
-  background-color: white;
-  color: purple;
-  border: solid;
+.nav-links a:focus, .tag:hover, .tag:focus, .back:hover, .back:focus, .footerlinks a:hover, .footerlinks a:focus {
+  background-color: purple;
+  color: white;
 }
 
 .expanded {
@@ -97,11 +108,17 @@ h1 {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
-    background-color: purple;
-    color: white;
+    background-color: white;
+    color: purple;
     border: solid;
-    border-color: purple;
-    margin-right: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .hamburger {
@@ -112,12 +129,18 @@ h1 {
 
 /* dark theme */
 html.dark {
-  background-color: #0d0950;
-  color: #fff;
+  background-color: #1e293b;
+  color: white;
 }
 
-.dark .nav-links a {
-  color: #fff;
+.dark .nav-links a, .dark .tag, .dark .back, .dark .footerlinks a {
+  color: white;
+  background-color: purple;
+}
+
+.dark .nav-links a:hover, .dark .tag:hover, .dark .tag:focus, .dark .back:hover, .dark .back:focus, .dark .footerlinks a:hover, .dark .footerlinks a:focus {
+  color: purple;
+  background-color: white;
 }
 
 .dark .hamburger .line {
@@ -125,5 +148,9 @@ html.dark {
 }
 
 .dark h1 {
+    color: white;
+}
+
+.dark a {
     color: white;
 }
