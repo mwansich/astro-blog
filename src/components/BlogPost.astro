@@ -1,4 +1,19 @@
 ---
-const { url, title, date } = Astro.props;
+const { url, title, date, image, alt, description, author } = Astro.props;
 ---
-<li><a href={url}>{title}</a> - {date.toLocaleDateString()}</li>
+<div class="blog-thumbnail">
+<a href={url}><img src={image} alt={alt} /></a>
+<h2><a href={url}>{title}</a></h2>
+<p>{date.toLocaleDateString()}</p>
+<p>{description}</p>
+</div>
+
+<style>
+    img {
+        width: 100%;
+    }
+    h2 {
+        margin-bottom: -12px;
+    }
+
+</style>

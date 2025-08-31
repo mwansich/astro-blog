@@ -91,6 +91,7 @@ a {
 .nav-links a:focus, .tag:hover, .tag:focus, .back:hover, .back:focus, .footerlinks a:hover, .footerlinks a:focus {
   background-color: purple;
   color: white;
+  border-color: purple;
 }
 
 .expanded {
@@ -127,6 +128,15 @@ a {
 
 }
 
+.blog-thumbnail {
+    padding: 15px;
+    border: solid;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    border-color: purple;
+  }
+
+
 /* dark theme */
 html.dark {
   background-color: #1e293b;
@@ -141,6 +151,7 @@ html.dark {
 .dark .nav-links a:hover, .dark .tag:hover, .dark .tag:focus, .dark .back:hover, .dark .back:focus, .dark .footerlinks a:hover, .dark .footerlinks a:focus {
   color: purple;
   background-color: white;
+  border-color: white;
 }
 
 .dark .hamburger .line {
@@ -154,3 +165,8 @@ html.dark {
 .dark a {
     color: white;
 }
+
+.dark .blog-thumbnail {
+      background: rgba(128, 0, 128, 1);
+      border-color: white;
+    }
