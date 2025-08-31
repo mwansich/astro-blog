@@ -7,19 +7,15 @@ const pageTitle = "About Me";
 const identity = {
   firstName: "M",
   country: "Germany",
-  occupation: "Freelancer",
-  hobbies: ["photography", "birdwatching", "baseball"],
+  occupation: "Public Servant",
+  hobbies: ["photography", "movies with Nicolas Cage"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "Python", "C", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = true;
-const goal = 3;
+const skills = ["C", "HTML", "CSS", "JavaScript", "SQL", "Python", "Flask", "Astro"];
 
 const skillColor = "purple";
 const fontWeight = "bold";
-const textCase = "none"
+const textCase = "uppercase"
 ---
 
  <style is:global define:vars={{skillColor, fontWeight, textCase}}>
@@ -31,7 +27,7 @@ const textCase = "none"
         </style>
 
 <BaseLayout pageTitle={pageTitle}>
-<h2>and my new Astro Site</h2>
+<h2>and my final CS50 Project</h2>
         <p>Here are a few facts about me:</p>
         <ul>
             <li>My name is {identity.firstName}.</li>
@@ -42,12 +38,10 @@ const textCase = "none"
             <li>I don't have any hobbies</li>
         }
         </ul>
-        <p>My skills are:</p>
+        <p>I already learned the following skills in CS50:</p>
         <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
+        {skills.slice(0, 6).map((skill) => <li>{skill}</li>)}
         </ul>
         
-        {happy && <p>I am happy to be learning Astro!</p>}
-        {finished && <p>I finished this tutorial!</p>}
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+        <p>I'm now learning <span class="skill">{skills[7]}</span> while building this blog for my final project.</p>
 </BaseLayout>

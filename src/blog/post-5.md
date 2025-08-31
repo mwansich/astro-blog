@@ -1,11 +1,11 @@
 ---
-title: My Fith Blog Post
-author: Astro Learner
+title: "My Fith Blog Post"
+author: "M"
 description: "This post will show up on its own too!"
 image:
-    url: "https://docs.astro.build/default-og-image.png"
-    alt: "The word astro against an illustration of planets and stars."
-pubDate: 2025-08-30
+    url: "/src/img/trees.jpg"
+    alt: "Trees by a lake."
+pubDate: 2025-08-31
 tags: ["astro", "nightshift"]
 ---
-This post should now show up with my other blog posts, because i'm not using `import.meta.glob()` any longer but collections instead.
+This post should now show up with my other blog posts, because i'm not using `import.meta.glob()` any longer but a collection instead. Also posts should now me in the correct order on ``/blog`` because of a newly added sort function. And this post is using a local image from the ``/src`` folder for the first time.

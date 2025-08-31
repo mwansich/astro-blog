@@ -3,12 +3,20 @@ import '../styles/global.css';
 import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
-const pageTitle = "My Astro Learning Blog";
+
+const pageTitle = "My CS50 Final Project Blog";
+
+// get all blogposts from the blog collection
 const allPosts = await getCollection("blog");
+
+// Sort posts by date (newest first)
+const sortedPosts = allPosts.sort((a, b) => 
+  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 		
-    {allPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.image.url} alt={post.data.image.alt} description={post.data.description} author={post.data.author} />)}
+    {sortedPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.image.url} alt={post.data.image.alt} description={post.data.description} author={post.data.author} />)}
     
 </BaseLayout>

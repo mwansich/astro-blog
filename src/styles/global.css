@@ -167,6 +167,6 @@ html.dark {
 }
 
 .dark .blog-thumbnail {
-      background: rgba(128, 0, 128, 1);
+      background: black;
       border-color: white;
     }
