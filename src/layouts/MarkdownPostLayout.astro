@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { Image } from 'astro:assets';
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
@@ -11,7 +12,13 @@ const { frontmatter } = Astro.props;
     ))}
 </div>
 <p><em>{frontmatter.description}</em></p>
-<img src={frontmatter.image.url} width="100%" alt={frontmatter.image.alt} />
+<Image 
+  src={frontmatter.image.url} 
+  alt={frontmatter.image.alt}
+  width={800}
+  height={400}
+  class="blog-image"
+/>
 <slot />
 </BaseLayout>
 
@@ -24,6 +31,11 @@ const { frontmatter } = Astro.props;
   .tags {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .blog-image {
+    width: 100%;
+    height: auto;
   }
   
 </style>
