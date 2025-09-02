@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { Image } from 'astro:assets';
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props;;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
 <p>Published on: {frontmatter.pubDate.toLocaleDateString()}</p>
@@ -13,8 +13,8 @@ const { frontmatter } = Astro.props;
 </div>
 <p><em>{frontmatter.description}</em></p>
 <Image 
-  src={frontmatter.image.url} 
-  alt={frontmatter.image.alt}
+  src={frontmatter.cover} 
+  alt={frontmatter.coverAlt}
   width={800}
   height={400}
   class="blog-image"

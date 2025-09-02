@@ -22,7 +22,5 @@ const { posts } = Astro.props;
 ---
 <BaseLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
-  <ul>
-    {posts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} />)}
-  </ul>
+    {posts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
 </BaseLayout>

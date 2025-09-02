@@ -15,8 +15,6 @@ const sortedPosts = allPosts.sort((a, b) =>
 );
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-		
-    {sortedPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.image.url} alt={post.data.image.alt} description={post.data.description} author={post.data.author} />)}
-    
+<BaseLayout pageTitle={pageTitle}>	
+    {sortedPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
 </BaseLayout>

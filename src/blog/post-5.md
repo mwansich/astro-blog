@@ -2,9 +2,8 @@
 title: "My Fith Blog Post"
 author: "M"
 description: "This post will show up on its own too!"
-image:
-    url: "../img/backyard.jpg"
-    alt: "Trees by a lake."
+cover: "../img/backyard.jpg"
+coverAlt: "test"
 pubDate: 2025-08-31
 tags: ["astro", "nightshift"]
 ---
