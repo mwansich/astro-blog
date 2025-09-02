@@ -9,7 +9,7 @@ const pageTitle = "My CS50 Final Project Blog";
 // get all blogposts from the blog collection
 const allPosts = await getCollection("blog");
 
-// Sort posts by date (newest first)
+// Sort posts by date (newest first), asked Claude for help here
 const sortedPosts = allPosts.sort((a, b) => 
   new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );

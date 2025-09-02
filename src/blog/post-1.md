@@ -1,11 +1,11 @@
 ---
-title: 'My First Blog Post'
+title: "My First Blog Post"
 pubDate: 2025-08-27
-description: 'This is the first post of my new Astro blog.'
-author: 'Atro Learner'
-cover: 'https://docs.astro.build/assets/rose.webp'
-coverAlt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+description: "This is the first post of my new Astro blog that i built for my CS50 final project."
+author: "M"
+cover: "../img/trees.jpg"
+coverAlt: "Trees."
+tags: ["astro", "blogging", "CS50"]
 ---
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 

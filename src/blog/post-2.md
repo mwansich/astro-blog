@@ -1,10 +1,10 @@
 ---
-title: My Second Blog Post
-author: Astro Learner
+title: "My Second Blog Post"
+author: "M"
 description: "After learning some Astro, I couldn't stop!"
 cover: "../img/backyard.jpg"
-coverAlt: "The Astro logo on a dark background with a purple gradient arc."
+coverAlt: "Backyard."
 pubDate: 2025-08-28
-tags: ["astro", "blogging", "learning in public", "successes"]
+tags: ["astro", "blogging", "CS50"]
 ---
 After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!

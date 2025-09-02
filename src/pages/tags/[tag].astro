@@ -8,6 +8,7 @@ export async function getStaticPaths() {
 
   const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
+  // added the same sort function from blog.astro that Claude helped me with to the filter from the tutorial
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post: any) => post.data.tags.includes(tag))
     .sort((a: any, b: any) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
