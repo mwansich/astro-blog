@@ -39,6 +39,7 @@ a {
 .hamburger {
   padding-right: 20px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .hamburger .line {
@@ -145,11 +146,11 @@ html.dark {
 
 .dark .nav-links a, .dark .tag, .dark .back, .dark .footerlinks a {
   color: white;
-  background-color: purple;
+  background-color: #5b21b6;
 }
 
 .dark .nav-links a:hover, .dark .tag:hover, .dark .tag:focus, .dark .back:hover, .dark .back:focus, .dark .footerlinks a:hover, .dark .footerlinks a:focus {
-  color: purple;
+  color: #5b21b6;
   background-color: white;
   border-color: white;
 }
@@ -167,6 +168,6 @@ html.dark {
 }
 
 .dark .blog-thumbnail {
-      background: black;
+      background: #5b21b6;
       border-color: white;
     }
