@@ -10,7 +10,7 @@ body {
   padding: 1rem;
   line-height: 1.5;
   font-size: 18px;
-  text-align: justify;
+  text-align: left;
 }
 
 * {
@@ -74,7 +74,7 @@ a {
     margin-bottom: 0.5rem;
 }
 
-.tag, .back, .footerlinks a {
+.tag, .footerlinks a {
     display: inline-block;
     padding: 15px 20px;
     background-color: white;
@@ -91,7 +91,7 @@ a {
 }
 
 .nav-links a:hover,
-.nav-links a:focus, .tag:hover, .tag:focus, .back:hover, .back:focus, .footerlinks a:hover, .footerlinks a:focus {
+.nav-links a:focus, .tag:hover, .tag:focus, .footerlinks a:hover, .footerlinks a:focus {
   background-color: purple;
   color: white;
   border-color: purple;
@@ -146,12 +146,12 @@ html.dark {
   color: white;
 }
 
-.dark .nav-links a, .dark .tag, .dark .back, .dark .footerlinks a {
+.dark .nav-links a, .dark .tag, .dark .footerlinks a {
   color: white;
   background-color: #5b21b6;
 }
 
-.dark .nav-links a:hover, .dark .tag:hover, .dark .tag:focus, .dark .back:hover, .dark .back:focus, .dark .footerlinks a:hover, .dark .footerlinks a:focus {
+.dark .nav-links a:hover, .dark .tag:hover, .dark .tag:focus, .dark .footerlinks a:hover, .dark .footerlinks a:focus {
   color: #5b21b6;
   background-color: white;
   border-color: white;
