@@ -7,6 +7,7 @@ const { frontmatter } = Astro.props;;
 <p>Published on: {frontmatter.pubDate.toLocaleDateString()}</p>
 <p>Written by {frontmatter.author}</p>
 <div class="tags">
+  <p class="before-colon">Tags:</p>
     {frontmatter.tags.map((tag: string) => (
       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
     ))}
@@ -19,7 +20,9 @@ const { frontmatter } = Astro.props;;
   height={400}
   class="blog-image"
 />
-<slot />
+<div class="blogpost-content">
+  <slot />
+</div>
 </BaseLayout>
 
 <style>

@@ -1,0 +1,71 @@
+---
+import '../../styles/global.css';
+import { getCollection } from "astro:content";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+
+const pageTitle = "Archive";
+
+// pagination following https://docs.astro.build/en/guides/routing/#pagination
+export async function getStaticPaths({ paginate }: any) {
+    
+    // get all blogposts from the blog collection
+    const allPosts = await getCollection("blog");
+
+    // Sort posts by date (newest first), asked Claude for help here
+    const sortedPosts = allPosts.sort((a, b) => 
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+    );
+
+    // slice to show only the posts that are not on the blog page
+    const archivedPosts = sortedPosts.slice(3)
+
+    const uniqueYears = [...new Set(archivedPosts.map((post: any) => post.data.pubDate.getFullYear().toString()))];
+
+    return paginate(archivedPosts, { pageSize: 1,
+        props: { uniqueYears }
+     });
+}
+
+const { page, uniqueYears }: any = Astro.props;
+---
+
+
+<BaseLayout pageTitle={pageTitle}>	
+  <p>archived posts from the {uniqueYears.length >= 2 ? 
+  `years ${uniqueYears.map((year:any, index:any) => year + (index === uniqueYears.length - 2 ? ' and ' : index < uniqueYears.length - 1 ? ', ' : '')).join('')}` : 
+  `year ${uniqueYears[0]}`}</p>
+  <div>
+  {page.data.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
+  </div>
+  <div class="footerlinks">
+    <p>Page {page.currentPage} of {page.total}</p>
+   <div class="pagination-nav">
+        {page.url.prev ? <a href={page.url.prev} class="prev">Previous</a> : null}
+        {page.url.next ? <a href={page.url.next} class="next">Next</a> : null}  
+  </div>
+  </div>
+</BaseLayout>
+
+<style>
+
+.pagination-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.prev {
+  margin-right: auto;
+}
+
+.next {
+  margin-left: auto;
+}
+
+.footerlinks p {
+  text-align: center;
+}
+
+</style>

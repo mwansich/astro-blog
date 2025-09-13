@@ -1,13 +1,14 @@
 ---
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 
 const pageTitle = "About Me";
 
 const identity = {
-  firstName: "M",
-  country: "Germany",
-  occupation: "Public Servant",
+  firstName: "[Name]",
+  country: "[Country]",
+  occupation: "[Job]",
   hobbies: ["photography", "watching movies with Nicolas Cage"],
 };
 
@@ -32,6 +33,16 @@ const textCase = "uppercase"
 
 <BaseLayout pageTitle={pageTitle}>
 <h2>and my final CS50 Project</h2>
+<p>
+<figure>
+<Image 
+  src={ 'https://thispersondoesnotexist.com' } 
+  alt={ 'picture of a person randomly generated via https://thispersondoesnotexist.com' }
+  width={250}
+  height={250} />
+  <figcaption><a href="https://thispersondoesnotexist.com/" target="_blank">thispersondoesnotexist.com</a></figcaption>
+</figure>
+</p>
         <p>Here are a few facts about me:</p>
         <ul>
             <li>My name is {identity.firstName}.</li>

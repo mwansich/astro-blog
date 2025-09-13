@@ -1,7 +1,13 @@
 html {
   background-color: #f8fafc;
   font-family: 'Open Sans', sans-serif;
+  /* background-image: 
+  linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px),
+  linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 20px 20px; */
 }
+
+/* #f8fafc */
 
 body {
   margin: 0 auto;
@@ -13,16 +19,24 @@ body {
   text-align: left;
 }
 
+/* wrapper used for the slot in markdownpoastlayout to justify blogpost text */
+.blogpost-content p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 * {
   box-sizing: border-box;
 }
 
+/* wrapper for content in baselayout */
 .wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* main in baselayout */
 .content {
   flex: 1;
 }
@@ -35,6 +49,37 @@ h1 {
 
 a {
     color: purple;
+}
+
+figure {
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+  border: solid;
+  padding: 15px;
+  border-color: purple;
+  background-color: white;
+}
+
+figcaption {
+  font-size: 0.85em;
+  color: #707070;
+  font-style: italic;
+  max-width:auto;
+}
+
+.dark figcaption {
+  color: #afafaf;
+}
+
+figcaption a {
+  text-decoration: none;
+  color: #707070;
+}
+
+.dark figcaption a {
+  text-decoration: none;
+  color: #afafaf;
 }
 
 /* nav styles */
@@ -74,7 +119,7 @@ a {
     margin-bottom: 0.5rem;
 }
 
-.tag, .footerlinks a {
+.tag, .before-colon, .footerlinks a {
     display: inline-block;
     padding: 15px 20px;
     background-color: white;
@@ -88,6 +133,12 @@ a {
     text-align: center;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
+}
+
+.before-colon {
+  color: white;
+  background-color: purple;
+  border-color: purple;
 }
 
 .nav-links a:hover,
@@ -135,7 +186,7 @@ a {
     padding: 15px;
     border: solid;
     margin-bottom: 1.5rem;
-    background-color: white;
+    background-color: rgba(255,255,255,1);
     border-color: purple;
   }
 
@@ -144,11 +195,21 @@ a {
 html.dark {
   background-color: #1e293b;
   color: white;
+  /* background-image: 
+  linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px),
+  linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px; */
 }
 
 .dark .nav-links a, .dark .tag, .dark .footerlinks a {
   color: white;
   background-color: #5b21b6;
+}
+
+.dark .before-colon {
+  color: #5b21b6;
+  background-color: white;
+  border-color: white;
 }
 
 .dark .nav-links a:hover, .dark .tag:hover, .dark .tag:focus, .dark .footerlinks a:hover, .dark .footerlinks a:focus {
@@ -169,7 +230,7 @@ html.dark {
     color: white;
 }
 
-.dark .blog-thumbnail {
+.dark .blog-thumbnail, .dark figure {
       background: #5b21b6;
       border-color: white;
     }
