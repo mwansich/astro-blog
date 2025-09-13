@@ -1,43 +1,25 @@
-# Astro Starter Kit: Minimal
+# My CS50 Final Project – Astro Blog
+#### Video Demo:  <URL HERE>
+#### Description:
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Introduction
+I built this blog from scratch with [astro](https://astro.build/) following the [introduction tutorial](https://docs.astro.build/en/tutorial/0-introduction/) and improving upon it, applying my own styling and adding more functionality following the docs \(and with some help of Claude AI\). I also used Claude in situations where i didnt understand why something wasnt working and for help finding fitting colors and such or to explain concepts to me and help me understand.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The page is deployed via netlify [here](https://deluxe-frangipane-d091d8.netlify.app/).
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Project Structure
+- ``src/blog`` contains all the blogposts as markdown files
+- ``src/components`` contains several components, basic building blocks of any Astro project, used throughout the whole website
+- ``src/img`` contains all images used throughout the whole website
+- ``src/layouts`` contains the main layouts ``BaseLayout.astro``and ``MarkdownPostLayout.astro``. They are basically templates for all the other pages and for the Blog-Posts
+- ``src/pages`` contains all the actual pages of the website. ``/archive``, ``/posts`` and ``/tags`` are folders because they contain astro files that generate several pages from the blog collection
+- ``src/scripts`` contains a script for the hamburger menu from the tutorial
+- ``src/styles`` contains the ``global.css`` file used for styling the page
+- the ``content.config.ts`` is used to define a collection \(the blog\) and a schema for the collection
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## index.html
+The landing page ``index.html`` or ``index.astro`` features a greeting from the astro tutorial and some introductory text \(the same as above\).
+I added a featured posts \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in their frontmatter.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

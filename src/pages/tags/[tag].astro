@@ -14,15 +14,33 @@ export async function getStaticPaths() {
     .sort((a: any, b: any) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
     return {
       params: { tag },
-      props: { posts: filteredPosts },
+      props: { posts: filteredPosts, uniqueTags },
     };
   });
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { posts, uniqueTags } = Astro.props;
 ---
 <BaseLayout pageTitle={`Tag: ${tag}`}>
-  <p>Posts tagged with {tag}</p>
+  <h2>Posts tagged with {tag}</h2>
     {posts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
+  <h2>more tags</h2>
+    <div class="tags">
+    {uniqueTags.map((tag) => (
+      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+    ))}
+  </div>
 </BaseLayout>
+
+<style>
+
+  .tags {
+    margin-top: -15px;
+  }
+
+    .tag a {
+        color: inherit;
+    }
+
+</style>

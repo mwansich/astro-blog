@@ -5,6 +5,7 @@ description: "This post will show up on its own too!"
 cover: "../img/backyard.jpg"
 coverAlt: "test"
 pubDate: 2025-08-31
+featured: "yes"
 tags: ["astro", "nightshift"]
 ---
 # Accomplishments

@@ -5,6 +5,7 @@ description: "This is the first post of my new Astro blog that i built for my CS
 author: "M"
 cover: "../img/trees.jpg"
 coverAlt: "Trees."
+featured: "no"
 tags: ["astro", "blogging", "CS50"]
 ---
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
