@@ -7,8 +7,6 @@ I built this blog from scratch with [astro](https://astro.build/) following the 
 
 The page is deployed via netlify [here](https://deluxe-frangipane-d091d8.netlify.app/).
 
-
-
 ## Project Structure
 - ``src/blog`` contains all the blogposts as markdown files
 - ``src/components`` contains several components, basic building blocks of any Astro project, used throughout the whole website
@@ -21,5 +19,5 @@ The page is deployed via netlify [here](https://deluxe-frangipane-d091d8.netlify
 
 ## index.html
 The landing page ``index.html`` or ``index.astro`` features a greeting from the astro tutorial and some introductory text \(the same as above\).
-I added a featured posts \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in their frontmatter.
+I added a featured posts \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in their frontmatter. Frontmatter attributes are defined in ``content.config.ts``
 
