@@ -17,12 +17,22 @@ The page is deployed via netlify [here](https://deluxe-frangipane-d091d8.netlify
 - ``src/styles`` contains the ``global.css`` file used for styling the page
 - the ``content.config.ts`` is used to define a collection \(the blog\) and a schema for the collection
 
-## index.astro
+## Pages
+### index.astro
 The landing page ``index.html`` or ``index.astro`` features a greeting from the astro tutorial and some introductory text \(the same as above\).
 I added a featured posts \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in their frontmatter. Frontmatter attributes are defined in ``content.config.ts``
 
-## blog.astro
-the blog
+### blog.astro
+the blog page
 
-## about.astro
+### about.astro
 the about page
+
+## archive/
+The archive folder contains a \[page\].astro file. This file makes use of astros paginate function to dynamically generate pages for a certain number of archived blogposts. For testing purposes it's one blog post per page.
+
+## posts/
+The posts folder contains a \[...slug\].astro file that generates a static path and individual pages for each md file in ``/src/blog`` \(all posts in the blog collection\) using astros render function.
+
+## tags/
+The tags folder contains an index page that show an index of all tags used in the blog collection and a \[tag\].astro file that generates static paths and pages for all tags containing all posts with that tag.
