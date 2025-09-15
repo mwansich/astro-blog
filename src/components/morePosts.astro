@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from 'astro:assets';
+
+const allPosts = await getCollection("blog");
+const randomPosts = allPosts.sort(() => Math.random() - 0.5).slice(0, 6);
+/* asked claude how to get random posts, recommended this easy method */
+---
+<h2>Explore more Posts</h2>
+<div class="thumbnail-container">
+{randomPosts.map((post: any) => 
+<a href={`/posts/${post.id}/`}><figure class="thumbnail">
+    <Image
+    src={post.data.cover}
+    alt={post.data.coverAlt}
+    width={300}
+    height={200}
+    fit="cover"
+    />
+    <figcaption>
+        <h3>{post.data.title}</h3>
+        <p style="margin-top: -15px; font-size:0.9rem;">{post.data.pubDate.toLocaleDateString()}</p>
+        <p>{post.data.description}</p>
+        </figcaption>
+        </figure></a>)}
+</div>
+
+<style>
+    figure {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    .thumbnail-container {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .thumbnail {
+        border: solid;
+        max-width: 100%;
+    }
+
+    .thumbnail img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    figure {
+        padding: 15px;
+    }
+
+    figcaption {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        text-align: left;
+    }
+</style>

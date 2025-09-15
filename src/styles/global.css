@@ -51,7 +51,7 @@ a {
     color: purple;
 }
 
-figure {
+.about_pic figure {
   margin: 0;
   display: inline-block;
   text-align: left;
@@ -61,23 +61,23 @@ figure {
   background-color: white;
 }
 
-figcaption {
+.about_pic figcaption {
   font-size: 0.85em;
   color: #707070;
   font-style: italic;
   max-width:auto;
 }
 
-.dark figcaption {
+.dark .about_pic figcaption {
   color: #afafaf;
 }
 
-figcaption a {
+.about_pic figcaption a {
   text-decoration: none;
   color: #707070;
 }
 
-.dark figcaption a {
+.dark .about_pic figcaption a {
   text-decoration: none;
   color: #afafaf;
 }
@@ -230,7 +230,11 @@ html.dark {
     color: white;
 }
 
-.dark .blog-thumbnail, .dark figure {
+.dark .blog-thumbnail, .dark .about_pic figure {
       background: #5b21b6;
       border-color: white;
     }
+
+.dark .thumbnail-container figure {
+  background: #5b21b6;
+}

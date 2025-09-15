@@ -6,9 +6,10 @@ import { Image } from 'astro:assets';
 const pageTitle = "About Me";
 
 const identity = {
-  firstName: "[Name]",
-  country: "[Country]",
-  occupation: "[Job]",
+  firstName: "Marcel",
+  country: "Germany",
+  github: "mwansich",
+  edx: "mrclw1",
   hobbies: ["photography", "watching movies with Nicolas Cage"],
 };
 
@@ -16,7 +17,7 @@ const skills = ["C", "HTML", "CSS", "JavaScript", "SQL", "Python", "Flask", "Ast
 
 const skillColor = "purple";
 const fontWeight = "bold";
-const textCase = "uppercase"
+const textCase = "uppercase";
 ---
 
  <style is:global define:vars={{skillColor, fontWeight, textCase}}>
@@ -33,7 +34,7 @@ const textCase = "uppercase"
 
 <BaseLayout pageTitle={pageTitle}>
 <h2>and my final CS50 Project</h2>
-<p>
+<div class="about_pic">
 <figure>
 <Image 
   src={ 'https://thispersondoesnotexist.com' } 
@@ -42,11 +43,13 @@ const textCase = "uppercase"
   height={250} />
   <figcaption><a href="https://thispersondoesnotexist.com/" target="_blank">thispersondoesnotexist.com</a></figcaption>
 </figure>
-</p>
+</div>
         <p>Here are a few facts about me:</p>
         <ul>
             <li>My name is {identity.firstName}.</li>
-            <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+            <li>I live in {identity.country}.</li>
+            <li>My Github username used for CS50 is {identity.github}</li>
+            <li>My edx username is {identity.edx}</li>
         {identity.hobbies.length >= 2 ?
             <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li> : 
             identity.hobbies.length === 1 ? <li>My only Hobby is: {identity.hobbies[0]}</li> :
@@ -55,7 +58,7 @@ const textCase = "uppercase"
         </ul>
         <p>I already learned the following skills in CS50:</p>
         <ul>
-        {skills.slice(0, 6).map((skill) => <li>{skill}</li>)}
+        {skills.slice(0, 7).map((skill) => <li>{skill}</li>)}
         </ul>
         
         <p>I'm now learning <span class="skill">{skills[7]}</span> while building this blog for my final project.</p>
