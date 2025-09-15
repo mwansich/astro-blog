@@ -7,7 +7,7 @@ I built this blog from scratch with [astro](https://astro.build/) following the 
 
 The page is deployed via netlify [here](https://deluxe-frangipane-d091d8.netlify.app/).
 
-
+I think i made a mistake setting up vscode because it didnt use the mwansich but another github account that's also mine. It happened because i had github desktop where i had to change the settings. I only found out later how to do this. So now my other account is the main contributor.. i used this as an oppurtunity though to get used to github and started to collaborate with myself on the repository from another pc. I can show proof i own that account too in my video, i hope.
 
 ## Project Structure
 - ``src/blog`` contains all the blogposts as markdown files
@@ -23,3 +23,7 @@ The page is deployed via netlify [here](https://deluxe-frangipane-d091d8.netlify
 The landing page ``index.html`` or ``index.astro`` features a greeting from the astro tutorial and some introductory text \(the same as above\).
 I added a featured posts \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in their frontmatter.
 
+## Pictures
+Images can be stored in the ``/public`` folder but Astro also is able to process and optimize images stored in the ``src``folder with the built-in ``<Image />`` component. Since i wanted to use images from the ``src`` folder in my blog posts i had to implement the image helper according to [docs](https://docs.astro.build/en/guides/images/#images-in-content-collections).
+
+The pictures are analog photographies i took myself btw.
