@@ -38,3 +38,8 @@ The posts folder contains a \[...slug\].astro file that generates a static path 
 
 ## tags/
 The tags folder contains an index page that show an index of all tags used in the blog collection and a \[tag\].astro file that generates static paths and pages for all tags containing all posts with that tag.
+
+## Pictures
+Images can be stored in the ``/public`` folder but Astro also is able to process and optimize images stored in the ``src``folder with the built-in ``<Image />`` component. Since i wanted to use images from the ``src`` folder in my blog posts i had to implement the image helper according to [docs](https://docs.astro.build/en/guides/images/#images-in-content-collections).
+
+The pictures are analog photographies i took myself btw.
