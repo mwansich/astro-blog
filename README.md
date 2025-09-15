@@ -17,7 +17,9 @@ The page is deployed via netlify [here](https://deluxe-frangipane-d091d8.netlify
 - ``src/styles`` contains the ``global.css`` file used for styling the page
 - the ``content.config.ts`` is used to define a collection \(the blog\) and a schema for the collection
 
-## index.html
+## index.astro
 The landing page ``index.html`` or ``index.astro`` features a greeting from the astro tutorial and some introductory text \(the same as above\).
 I added a featured posts \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in their frontmatter. Frontmatter attributes are defined in ``content.config.ts``
 
+## blog.astro
+the blog
