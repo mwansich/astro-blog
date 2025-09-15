@@ -23,3 +23,6 @@ I added a featured posts \(or posts\) section. If there's more than one featured
 
 ## blog.astro
 the blog
+
+## about.astro
+the about page
