@@ -1,9 +1,12 @@
 ---
 import Social from './Social.astro';
+import PostStats from './PostStats.astro';
 ---
 <style>
   footer {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
     margin-top: auto;
   }
@@ -11,4 +14,5 @@ import Social from './Social.astro';
 
 <footer>
   <p class="footerlinks"><Social tld="com" platform="github" username="mwansich" /></p>
+  <PostStats />
 </footer>

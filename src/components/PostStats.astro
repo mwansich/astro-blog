@@ -1,0 +1,36 @@
+---
+// this component displays the total number of blog posts and unique tags
+// it was made by claude AI using clode code and improved by me
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+const totalPosts = allPosts.length;
+
+// Get unique tags from all posts
+const allTags = [...new Set(allPosts.flatMap(post => post.data.tags))];
+const totalTags = allTags.length;
+---
+
+<div class="post-stats">
+  <a href="/blog"><span class="stat-item">
+    {totalPosts} {totalPosts === 1 ? 'Post' : 'Posts'}
+  </span></a>
+  <a href="/tags"><span class="stat-item">
+    {totalTags} {totalTags === 1 ? 'Tag' : 'Tags'}
+  </span></a>
+</div>
+
+<style>
+  .post-stats {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: inherit;
+  }
+
+  .stat-item {
+    white-space: nowrap;
+  }
+
+</style>
