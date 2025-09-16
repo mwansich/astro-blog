@@ -2,7 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import MorePosts from '../components/morePosts.astro';
 import { Image } from 'astro:assets';
-const { frontmatter } = Astro.props;;
+const { frontmatter, postID } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
 <p>Published on: {frontmatter.pubDate.toLocaleDateString()}</p>
@@ -24,7 +24,7 @@ const { frontmatter } = Astro.props;;
 <div class="blogpost-content">
   <slot />
 </div>
-<MorePosts />
+<MorePosts currentPost={postID}/>
 </BaseLayout>
 
 <style>

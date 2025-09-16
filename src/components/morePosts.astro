@@ -1,19 +1,20 @@
 ---
+const { currentPost } = Astro.props;
 import { getCollection } from "astro:content";
 import { Image } from 'astro:assets';
 
 const allPosts = await getCollection("blog");
-const randomPosts = allPosts.sort(() => Math.random() - 0.5).slice(0, 6);
+const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => Math.random() - 0.5).slice(0, 4);
 /* asked claude how to get random posts, recommended this easy method */
 ---
 <h2>Explore more Posts</h2>
 <div class="thumbnail-container">
-{randomPosts.map((post: any) => 
-<a href={`/posts/${post.id}/`}><figure class="thumbnail">
+{randomPosts.map((post: any, index) => 
+<a href={`/posts/${post.id}/`} {...(index === 3 ? { id: "invis" } : {})}><figure class="thumbnail">
     <Image
     src={post.data.cover}
     alt={post.data.coverAlt}
-    width={300}
+    width={400}
     height={200}
     fit="cover"
     />
@@ -63,5 +64,11 @@ const randomPosts = allPosts.sort(() => Math.random() - 0.5).slice(0, 6);
         overflow-wrap: break-word;
         hyphens: auto;
         text-align: left;
+    }
+
+    @media screen and (min-width: 662px) {
+        #invis {
+            display: none;
+        }
     }
 </style>

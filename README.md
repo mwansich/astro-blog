@@ -43,3 +43,7 @@ The tags folder contains an index page that show an index of all tags used in th
 Images can be stored in the ``/public`` folder but Astro also is able to process and optimize images stored in the ``src``folder with the built-in ``<Image />`` component. Since i wanted to use images from the ``src`` folder in my blog posts i had to implement the image helper according to [docs](https://docs.astro.build/en/guides/images/#images-in-content-collections).
 
 The pictures are analog photographies i took myself btw.
+
+## Components
+### morePosts
+The morePosts component is used in the MarkdownPostLayout. It generates a div that shows more random posts from the collection. On bigger screens it shows 3 posts next to each other and on smaller screens it shows 4 posts, either two side by side or one after another. It gets all the posts from the blog collection while filtering out the current post the user is viewing and shuffles the array of posts around randomly, then slicing it to 4 posts. A loop makes for figures as thumbnails that link to these posts. The 4th post gets an id that allows to give it display:none styling when on bigger screens, to achieve the above mentioned effect.
