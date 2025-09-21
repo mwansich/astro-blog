@@ -3,6 +3,7 @@ import '../../styles/global.css';
 import { getCollection } from "astro:content";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
+import SearchBar from '../../components/SearchBar.astro';
 
 const pageTitle = "Archive";
 
@@ -31,7 +32,8 @@ const { page, uniqueYears }: any = Astro.props;
 ---
 
 
-<BaseLayout pageTitle={pageTitle}>	
+<BaseLayout pageTitle={pageTitle}>
+  <SearchBar />
   <p>archived posts from the {uniqueYears.length >= 2 ? 
   `years ${uniqueYears.map((year:any, index:any) => year + (index === uniqueYears.length - 2 ? ' and ' : index < uniqueYears.length - 1 ? ', ' : '')).join('')}` : 
   `year ${uniqueYears[0]}`}</p>
