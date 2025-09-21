@@ -46,7 +46,7 @@ import Fuse from 'fuse.js';
                     <a href="/posts/${slug}" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                         <h3 class="mb-1">${title}</h3>
-                        <small class="text-muted">${new Date(date).toLocaleDateString()}</small>
+                        <small class="text-muted">${date}</small>
                         </div>
                         <p class="mb-1">${description || ''}</p>
                         <small class="text-muted">Tags: ${tags ? tags.join(', ') : 'None'}</small>

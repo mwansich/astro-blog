@@ -56,6 +56,7 @@ a {
   display: inline-block;
   text-align: left;
   border: solid;
+  border-width: 1px;
   padding: 15px;
   border-color: purple;
   background-color: white;
@@ -122,6 +123,7 @@ a {
     background-color: white;
     color: purple;
     border: solid;
+    border-width: 1px;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
@@ -137,6 +139,7 @@ a {
     background-color: white;
     color: purple;
     border: solid;
+    border-width: 1px;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
@@ -178,6 +181,7 @@ a {
     background-color: white;
     color: purple;
     border: solid;
+    border-width: 1px;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
@@ -197,6 +201,7 @@ a {
 .blog-thumbnail {
     padding: 15px;
     border: solid;
+    border-width: 1px;
     margin-bottom: 1.5rem;
     background-color: rgba(255,255,255,1);
     border-color: purple;
