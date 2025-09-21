@@ -4,15 +4,26 @@ import PostStats from './PostStats.astro';
 ---
 <style>
   footer {
+    margin-top: auto;
+  }
+
+  #links {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    margin-top: auto;
+    flex-wrap: wrap;
   }
+
 </style>
 
 <footer>
-  <p class="footerlinks"><Social tld="com" platform="github" username="mwansich" /></p>
-  <PostStats />
+  <div id="links">
+    <p class="footerlinks"><Social tld="com" platform="github" username="mwansich" /></p>
+    <PostStats />
+  </div>
+  <div class="imprint">
+    <p>&copy; 2025 / All rights reserved.</p>
+    <p>Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>.</p>
+  </div>
 </footer>

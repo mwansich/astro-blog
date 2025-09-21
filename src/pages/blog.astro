@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
+import SearchBar from '../components/SearchBar.astro';
 
 const pageTitle = "My CS50 Final Project Blog";
 
@@ -20,6 +21,7 @@ const recentPosts = sortedPosts.slice(0, 3);
 ---
 
 <BaseLayout pageTitle={pageTitle}>	
+  <SearchBar />
   <h2>most recent posts</h2>
   <div>
   {recentPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}

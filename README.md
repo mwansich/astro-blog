@@ -30,6 +30,9 @@ the blog page
 ### about.astro
 the about page
 
+### search.astro
+implemented a search function following [this tutorial](https://youtu.be/XnV_2MWqAhQ?feature=shared) using [fuse.js](https://www.fusejs.io/) to search the blog.
+
 ## archive/
 The archive folder contains a \[page\].astro file. This file makes use of astros paginate function to dynamically generate pages for a certain number of archived blogposts. For testing purposes it's one blog post per page.
 

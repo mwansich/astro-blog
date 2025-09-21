@@ -12,6 +12,9 @@
     "@astrojs/preact": "^4.1.0",
     "@fontsource/open-sans": "^5.2.6",
     "astro": "^5.13.7",
+    "bootstrap": "^5.3.8",
+    "dompurify": "^3.2.7",
+    "fuse.js": "^7.1.0",
     "preact": "^10.27.1"
   }
 }

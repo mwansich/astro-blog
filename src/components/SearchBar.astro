@@ -1,0 +1,55 @@
+<aside>
+    <form class="search-bar">
+        <input type="search" name="search" id="search" placeholder="Search..." />
+        <button type="submit">Search</button>
+    </form>
+</aside>
+
+<style is:global>
+
+    button {
+        color: white;
+        border: solid purple;
+    }
+
+    .search-bar {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap
+    }
+
+    .search-bar input[type="search"] {
+        flex: 1;
+        padding: 0.5rem;
+        border: solid purple;
+        outline: none;
+    }
+
+    .search-bar button {
+        padding: 0.5rem 1rem;
+        background-color: white;
+        color: purple;
+        cursor: pointer;
+    }
+
+    .search-bar button:hover {
+        background-color: purple;
+        color: white;
+    }
+
+    </style>
+
+    <script>
+        import DOMpurify from 'dompurify';
+        const form = document.querySelector('.search-bar');
+        form?.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(form  as HTMLFormElement);
+            const query = DOMpurify.sanitize((formData.get('search')?.toString().trim()) ?? "");
+            if (!query || query.length === 0) return;
+            const url = new URL('/search', window.location.origin);
+            url.searchParams.set('q', query);
+            window.location.assign(url.toString());
+        });
+    </script>

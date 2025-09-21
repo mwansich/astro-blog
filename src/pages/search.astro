@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Search";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <aside class="search-bar">
+        <input type="search" name="search" id="search" placeholder="Search..." />
+</aside>
+
+<section aria-label="Search Results" id="search-results-list">
+    <div class="bootstrap-list-scope">
+      <div class="list-group" id="results-container">
+      </div>
+    </div>
+</section>
+</BaseLayout>
+
+<style is:global>
+
+    button {
+        color: white;
+        border: solid purple;
+    }
+    .search-bar {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .search-bar input[type="search"] {
+        flex: 1;
+        padding: 0.5rem;
+        border: solid purple;
+        outline: none;
+    }
+
+    .search-bar button {
+        padding: 0.5rem 1rem;
+        background-color: white;
+        color: purple;
+        cursor: pointer;
+    }
+
+    .search-bar button:hover {
+        background-color: purple;
+        color: white;
+    }
+
+    
+
+ /* Bootstrap list-group styles scoped to .bootstrap-list-scope by Claude AI */
+  .bootstrap-list-scope .list-group {
+    --bs-list-group-color: #212529;
+    --bs-list-group-bg: #fff;
+    --bs-list-group-border-color: purple;
+    --bs-list-group-border-width: 1px;
+    --bs-list-group-action-hover-color: white;
+    --bs-list-group-action-hover-bg: purple;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .bootstrap-list-scope .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--bs-list-group-color);
+    text-decoration: none;
+    background-color: var(--bs-list-group-bg);
+    border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+   
+    margin-bottom: 0.75rem;
+  }
+
+  .bootstrap-list-scope .list-group-item:first-child {
+    border-top-width: var(--bs-list-group-border-width);
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+
+  .bootstrap-list-scope .list-group-item:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+  }
+
+  .bootstrap-list-scope .list-group-item-action:hover {
+    z-index: 1;
+    color: var(--bs-list-group-action-hover-color);
+    text-decoration: none;
+    background-color: var(--bs-list-group-action-hover-bg);
+  }
+
+  /* Bootstrap flexbox utilities scoped by Claude AI */
+  .bootstrap-list-scope .d-flex { display: flex !important; }
+  .bootstrap-list-scope .w-100 { width: 100% !important; }
+  .bootstrap-list-scope .justify-content-between { justify-content: space-between !important; }
+  .bootstrap-list-scope .flex-column { flex-direction: column !important; }
+  .bootstrap-list-scope .align-items-start { align-items: flex-start !important; }
+  .bootstrap-list-scope .mb-1 { margin-bottom: 0.25rem !important; }
+  .bootstrap-list-scope .text-muted { color: #6c757d !important; }
+
+  /* added by me */
+  h3 {
+        margin: 0;
+    }
+
+  .mb-1 {
+        margin-top: 0;
+    }
+
+  .dark .bootstrap-list-scope .list-group {
+    --bs-list-group-color: white;
+    --bs-list-group-bg: #5b21b6;
+    --bs-list-group-border-color: white;
+  }
+
+  .dark .bootstrap-list-scope .text-muted { color: #afafaf !important; }
+
+.dark .bootstrap-list-scope .list-group-item-action:hover {
+    color: #5b21b6;
+    background-color: white;
+}
+
+.bootstrap-list-scope .list-group-item-action:hover .text-muted { color: #afafaf !important; }
+
+.dark .bootstrap-list-scope .list-group-item-action:hover .text-muted { color: #6c757d !important; }
+
+</style>
+
+
+
+    <script>
+        import '../scripts/search.ts';
+    </script>
