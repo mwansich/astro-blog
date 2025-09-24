@@ -46,9 +46,10 @@ body {
   flex-direction: column;
 }
 
-/* main in baselayout */
+/* main class in baselayout */
 .content {
   flex: 1;
+  margin-bottom: 2rem;
 }
 
 h1 {

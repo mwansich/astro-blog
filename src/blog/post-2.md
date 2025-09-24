@@ -2,8 +2,8 @@
 title: "My Second Blog Post"
 author: "M"
 description: "After learning some Astro, I couldn't stop!"
-cover: "../img/backyard.jpg"
-coverAlt: "Backyard."
+cover: "../img/000084780005.jpg"
+coverAlt: "People walking, photo taken from above"
 pubDate: 2024-08-28
 featured: "no"
 tags: ["astro", "blogging", "CS50"]

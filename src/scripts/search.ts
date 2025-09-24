@@ -73,10 +73,32 @@ import Fuse from 'fuse.js';
 
             if (SEARCH_DATA && !FUSE_INSTANCE) {
                 FUSE_INSTANCE = new Fuse(SEARCH_DATA, {
-                    keys: ['title', 'description', 'tags', 'slug', 'date'],
+                    keys: [
+                        {
+                            name: 'slug',
+                            weight: 0.3
+                        }, 
+                        {
+                            name: 'description',
+                            weight: 0.7
+                        }, 
+                        {
+                            name: 'tags',
+                            weight: 0.8
+                        }, 
+                        {
+                            name: 'title', 
+                            weight: 1.0
+                        },
+                        {
+                            name: 'date',
+                            weight: 0.9
+                }],
                     includeScore: true,
                     shouldSort: true,
-                    threshold: 0.4,
+                    minMatchCharLength: 2,
+                    threshold: 0.0,
+                    ignoreLocation: true,
                 });
             }
 
@@ -87,7 +109,7 @@ import Fuse from 'fuse.js';
                 searchResultsList.innerHTML = 
                     searchResults.length > 0
                     ? generateSearchResultsHTML(searchResults)
-                    : '<div class="text-center text-muted p-4">No results found.</div>';
+                    : '<div class="text-center text-muted">No results found.</div>';
             }
             
         }
