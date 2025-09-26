@@ -290,3 +290,8 @@ html.dark {
 .dark .thumbnail-container figure {
   background: #5b21b6;
 }
+
+.dark .thumbnail-container figure:hover {
+        background-color: white;
+        color: #5b21b6 !important;
+    }

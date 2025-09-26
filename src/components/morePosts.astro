@@ -27,12 +27,7 @@ const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => 
 </div>
 
 <style>
-    figure {
-        margin: 0;
-        padding: 0;
-        background: white;
-    }
-
+   
     .thumbnail-container {
         max-width: 100%;
         display: grid;
@@ -44,6 +39,10 @@ const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => 
         border: solid;
         border-width: 1px;
         max-width: 100%;
+        margin: 0;
+        padding: 0;
+        background: white;
+        padding: 15px;
     }
 
     .thumbnail img {
@@ -52,20 +51,27 @@ const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => 
         display: block;
     }
 
+       .thumbnail:hover {
+        background: purple;
+        color: white;
+    }
+
     a {
         text-decoration: none;
     }
 
-    figure {
-        padding: 15px;
-    }
-
-    figcaption {
+    .thumbnail figcaption {
         word-wrap: break-word;
         overflow-wrap: break-word;
         hyphens: auto;
         text-align: left;
     }
+
+    .thumbnail figcaption h3 {
+        text-decoration: underline;
+    }
+
+   
 
     @media screen and (min-width: 662px) {
         #invis {
