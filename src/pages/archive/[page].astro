@@ -23,7 +23,7 @@ export async function getStaticPaths({ paginate }: any) {
 
     const uniqueYears = [...new Set(archivedPosts.map((post: any) => post.data.pubDate.getFullYear().toString()))];
 
-    return paginate(archivedPosts, { pageSize: 1,
+    return paginate(archivedPosts, { pageSize: 2,
         props: { uniqueYears }
      });
 }
@@ -41,7 +41,7 @@ const { page, uniqueYears }: any = Astro.props;
   {page.data.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
   </div>
   <div class="footerlinks">
-    <p>Page {page.currentPage} of {page.total}</p>
+    <p>Page {page.currentPage} of {page.lastPage}</p>
    <div class="pagination-nav">
         {page.url.prev ? <a href={page.url.prev} class="prev">Previous</a> : null}
         {page.url.next ? <a href={page.url.next} class="next">Next</a> : null}  

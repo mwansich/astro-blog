@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --light-main-color: purple;
+  --dark-main-color: #5b21b6;
+  --dark-secondary-color: white;
+  --light-secondary-color: white;
+  --light-grey: #707070;
+  --dark-grey: #afafaf;
+}
+
 html {
   background-color: #f8fafc;
   font-family: 'Open Sans', sans-serif;
@@ -8,7 +22,6 @@ html {
   overflow-x: hidden; /* Hide horizontal scrollbar */
   scrollbar-width: none; /* Hide scrollbar on Firefox */
   -ms-overflow-style: none; /* hide scrollbar on IE/Edge */
-  scroll-behavior: smooth;
   overflow-y: auto;
 }
 
@@ -34,9 +47,10 @@ body {
   text-justify: inter-word;
 }
 
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+.blogpost-content img {
+  width: 100%;
+  height: auto;
+  display: block;  
 }
 
 /* wrapper for content in baselayout */
@@ -55,11 +69,11 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
-  color: purple;
+  color: var(--light-main-color);
 }
 
 a {
-    color: purple;
+    color: var(--light-main-color);
 }
 
 .about_pic figure {
@@ -69,29 +83,29 @@ a {
   border: solid;
   border-width: 1px;
   padding: 15px;
-  border-color: purple;
-  background-color: white;
+  border-color: var(--light-main-color);
+  background-color: var(--light-secondary-color);
 }
 
 .about_pic figcaption {
   font-size: 0.85em;
-  color: #707070;
+  color: var(--light-grey);
   font-style: italic;
   max-width:auto;
 }
 
 .dark .about_pic figcaption {
-  color: #afafaf;
+  color: var(--dark-grey);
 }
 
 .about_pic figcaption a {
   text-decoration: none;
-  color: #707070;
+  color: var(--light-grey);
 }
 
 .dark .about_pic figcaption a {
   text-decoration: none;
-  color: #afafaf;
+  color: var(--dark-grey);
 }
 
 /* nav styles */
@@ -103,14 +117,14 @@ a {
 }
 
  .imprint {
-    color: #707070;
+    color: var(--light-grey);
     margin-top: 1rem;
     text-align: center;
     line-height: 1;
   }
 
   .dark .imprint {
-    color: #afafaf;
+    color: var(--dark-grey);
   }
 
 .hamburger .line {
@@ -118,7 +132,7 @@ a {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: purple;
+  background-color: var(--light-main-color);
 }
 
 .nav-links {
@@ -131,8 +145,8 @@ a {
 .nav-links a {
     display: block;
     padding: 15px 20px;
-    background-color: white;
-    color: purple;
+    background-color: var(--light-secondary-color);
+    color: var(--light-main-color);
     border: solid;
     border-width: 1px;
     font-weight: bold;
@@ -147,8 +161,8 @@ a {
 .tag, .before-colon, .footerlinks a, .stat-item {
     display: inline-block;
     padding: 15px 20px;
-    background-color: white;
-    color: purple;
+    background-color: var(--light-secondary-color);
+    color: var(--light-main-color);
     border: solid;
     border-width: 1px;
     font-weight: bold;
@@ -162,16 +176,16 @@ a {
 }
 
 .before-colon {
-  color: white;
-  background-color: purple;
-  border-color: purple;
+  color: var(--light-secondary-color);
+  background-color: var(--light-main-color);
+  border-color: var(--light-main-color);
 }
 
 .nav-links a:hover,
 .nav-links a:focus, .tag:hover, .tag:focus, .footerlinks a:hover, .footerlinks a:focus,.stat-item:hover {
-  background-color: purple;
-  color: white;
-  border-color: purple;
+  background-color: var(--light-main-color);
+  color: var(--light-secondary-color);
+  border-color: var(--light-main-color);
 }
 
 .expanded {
@@ -189,8 +203,8 @@ a {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
-    background-color: white;
-    color: purple;
+    background-color: var(--light-secondary-color);
+    color: var(--light-main-color);
     border: solid;
     border-width: 1px;
     font-weight: bold;
@@ -214,8 +228,8 @@ a {
     border: solid;
     border-width: 1px;
     margin-bottom: 1.5rem;
-    background-color: rgba(255,255,255,1);
-    border-color: purple;
+    background-color: var(--light-secondary-color);
+    border-color: var(--light-main-color);
   }
 
   input[type="search"]::-webkit-search-cancel-button {
@@ -236,7 +250,7 @@ background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"
 /* dark theme */
 html.dark {
   background-color: #1e293b;
-  color: white;
+  color: var(--dark-secondary-color);
   /* background-image: 
   linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px),
   linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
@@ -244,54 +258,54 @@ html.dark {
 }
 
 .dark .nav-links a, .dark .tag, .dark .footerlinks a, .dark .stat-item {
-  color: white;
-  background-color: #5b21b6;
+  color: var(--dark-secondary-color);
+  background-color: var(--dark-main-color);
 }
 
 .dark .search-bar button, .dark .search-bar input[type="search"] {
-  background-color: #5b21b6;
-  color: white;
-  border-color: white;
+  background-color: var(--dark-main-color);
+  color: var(--dark-secondary-color);
+  border-color: var(--dark-secondary-color);
 }
 
 .dark .before-colon {
-  color: #5b21b6;
-  background-color: white;
-  border-color: white;
+  color: var(--dark-main-color);
+  background-color: var(--dark-secondary-color);
+  border-color: var(--dark-secondary-color);
 }
 
 .dark .nav-links a:hover, .dark .tag:hover, .dark .tag:focus, .dark .footerlinks a:hover, .dark .footerlinks a:focus, .dark .search-bar button:hover, .dark .search-bar button:focus, .dark .stat-item:hover {
-  color: #5b21b6;
-  background-color: white;
-  border-color: white;
+  color: var(--dark-main-color);
+  background-color: var(--dark-secondary-color);
+  border-color: var(--dark-secondary-color);
 }
 
 .dark .hamburger .line {
-  background-color: white;
+  background-color: var(--dark-secondary-color);
 }
 
 .dark h1 {
-    color: white;
+    color: var(--dark-secondary-color);
 }
 
 .dark a {
-    color: white;
+    color: var(--dark-secondary-color);
 }
 
 .dark input[type="search"]::placeholder {
-  color: #afafaf;
+  color: var(--dark-grey);
 }
 
 .dark .blog-thumbnail, .dark .about_pic figure {
-      background: #5b21b6;
-      border-color: white;
+      background: var(--dark-main-color);
+      border-color: var(--dark-secondary-color);
     }
 
 .dark .thumbnail-container figure {
-  background: #5b21b6;
+  background: var(--dark-main-color);
 }
 
 .dark .thumbnail-container figure:hover {
-        background-color: white;
-        color: #5b21b6 !important;
+        background-color: var(--dark-secondary-color);
+        color: var(--dark-main-color) !important;
     }

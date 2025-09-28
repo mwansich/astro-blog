@@ -10,7 +10,9 @@ import { Image } from 'astro:assets';
   width={800}
   height={400}
   fit="cover"
-  class="blog-image"
+  class="blog-thumbnail-image"
+  loading="lazy"
+  decoding="async"
 />  
 </a>
 <h2><a href={url}>{title}</a></h2>
@@ -20,7 +22,7 @@ import { Image } from 'astro:assets';
 
 <style>
 
-    .blog-image {
+    .blog-thumbnail-image {
         max-width: 100%;
         height: auto;
     }

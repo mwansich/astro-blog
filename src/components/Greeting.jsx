@@ -8,7 +8,7 @@ export default function Greeting({messages}) {
 
   return (
     <div>
-      <h2>{greeting}! Thank you for visiting!</h2>
+      <h2>{greeting}! Thank you for visiting my blog!</h2>
     </div>
   );
 }

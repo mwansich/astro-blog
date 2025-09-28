@@ -17,6 +17,8 @@ const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => 
     width={400}
     height={200}
     fit="cover"
+    loading="lazy" 
+    decoding="async"
     />
     <figcaption>
         <h3>{post.data.title}</h3>
@@ -70,8 +72,6 @@ const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => 
     .thumbnail figcaption h3 {
         text-decoration: underline;
     }
-
-   
 
     @media screen and (min-width: 662px) {
         #invis {
