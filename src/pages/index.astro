@@ -23,7 +23,15 @@ const sortedPosts = featuredPosts.sort((a, b) =>
   <section>
   <h2>Featured {featuredPosts.length >= 2 ? 'Posts' : 'Post'} from my Blog</h2>
   <div>
-  {sortedPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
+  {sortedPosts.map((post: any, index: number) => <BlogPost 
+    url={`/posts/${post.id}/`} 
+    title={post.data.title} 
+    date={post.data.pubDate} 
+    image={post.data.cover} 
+    alt={post.data.coverAlt} 
+    description={post.data.description} 
+    author={post.data.author}
+    loading={index === 0 ? "eager" : "lazy"} />)}
   </div>
   </section>
 </BaseLayout>

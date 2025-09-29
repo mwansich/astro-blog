@@ -3,7 +3,7 @@ title: "Content Collections"
 author: "M"
 description: "I finished the tutorial and made the switch to using a content collection."
 cover: "../img/000084780005.jpg"
-coverAlt: "people walking, photo taken from above"
+coverAlt: "people walking, seen from above"
 pubDate: 2024-08-28
 featured: "no"
 tags: ["astro", "blogging", "collections"]

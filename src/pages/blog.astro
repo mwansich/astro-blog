@@ -24,7 +24,15 @@ const recentPosts = sortedPosts.slice(0, 3);
   <SearchBar />
   <h2>most recent posts</h2>
   <div>
-  {recentPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
+  {recentPosts.map((post: any, index: number) => <BlogPost 
+    url={`/posts/${post.id}/`} 
+    title={post.data.title} 
+    date={post.data.pubDate} 
+    image={post.data.cover} 
+    alt={post.data.coverAlt} 
+    description={post.data.description} 
+    author={post.data.author} 
+    loading={index === 0 ? "eager" : "lazy"}/>)}
   </div>
   <div><p class="footerlinks"><a href="/archive/1">Archive</a></p></div>
 </BaseLayout>

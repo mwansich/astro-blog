@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Image from 'astro/components/Image.astro';
 import { Picture } from 'astro:assets';
 
 
@@ -15,7 +14,15 @@ const allPosts = await getCollection("blog");
 
 <BaseLayout pageTitle={pageTitle}>	
   <div class="gallery">
-  {allPosts.map((post: any) => <Picture src={post.data.cover} alt={post.data.coverAlt} formats={['webp']} width={750} height={500} loading="lazy" decoding="async" layout="constrained" />)}
+  {allPosts.map((post: any, index: number) => <Picture 
+    src={post.data.cover} 
+    alt={post.data.coverAlt} 
+    formats={['webp']} 
+    width={750} 
+    height={500} 
+    loading={index <= 1 ? "eager" : "lazy"}
+    decoding="async" 
+    layout="constrained" />)}
   </div>
 </BaseLayout>
 

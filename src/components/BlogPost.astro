@@ -1,19 +1,19 @@
 ---
-const { url, title, date, image, alt, description, author } = Astro.props;
+const { url, title, date, image, alt, description, author, loading = "lazy" } = Astro.props;
 import { Image } from 'astro:assets';
 ---
 <div class="blog-thumbnail">
 <a href={url}>
   <Image 
-  src={ image } 
+  src={ image }
   alt={ alt }
   width={800}
   height={400}
   fit="cover"
   class="blog-thumbnail-image"
-  loading="lazy"
+  loading={loading}
   decoding="async"
-/>  
+/>
 </a>
 <h2><a href={url}>{title}</a></h2>
 <p>{date.toLocaleDateString()}</p>

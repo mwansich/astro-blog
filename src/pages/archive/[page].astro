@@ -38,7 +38,15 @@ const { page, uniqueYears }: any = Astro.props;
   `years ${uniqueYears.map((year:any, index:any) => year + (index === uniqueYears.length - 2 ? ' and ' : index < uniqueYears.length - 1 ? ', ' : '')).join('')}` : 
   `year ${uniqueYears[0]}`}</p>
   <div>
-  {page.data.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
+  {page.data.map((post: any, index: number) => <BlogPost 
+    url={`/posts/${post.id}/`} 
+    title={post.data.title} 
+    date={post.data.pubDate} 
+    image={post.data.cover} 
+    alt={post.data.coverAlt} 
+    description={post.data.description} 
+    author={post.data.author}
+    loading={index === 0 ? "eager" : "lazy"} />)}
   </div>
   <div class="footerlinks">
     <p>Page {page.currentPage} of {page.lastPage}</p>
