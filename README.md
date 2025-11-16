@@ -1,16 +1,18 @@
 # My CS50 Final Project – Astro Blog
 #### Video Demo:  <URL HERE>
-#### Description:
+#### Description: Blog built with Astro web framework featuring tags, an archive and basic search functionality
 
 ## Introduction
-I built this blog from scratch with [astro](https://astro.build/) following the [introduction tutorial](https://docs.astro.build/en/tutorial/0-introduction/) and improving upon it, applying my own styling and adding more functionality following the docs \(and with some help of Claude AI\). I also used Claude in situations where i didn't understand why something wasn't working, for finding fitting colors and such or to explain concepts to me and help me understand them. I tried Claude Code with VSCode extension to see how it works.
+I built this blog from scratch with [astro](https://astro.build/) web framework following the [introduction tutorial](https://docs.astro.build/en/tutorial/0-introduction/) and improving upon it, applying my own styling and adding more functionality following the docs \(and with some help of Claude AI\). I also used Claude in situations where i didn't understand why something wasn't working to help me fix it, for finding fitting colors and such or to explain concepts to me and help me understand them. I tried Claude Code with VSCode extension a little bit to see how it works. I learned Astro, some Javascript/Typescript, Fuse.js, more CSS, how to use vscode/github/netflify and even more while doing this project.
 
 The page is deployed via netlify [here](https://deluxe-frangipane-d091d8.netlify.app/).
 
-I think i made a mistake setting up vscode because it didn't use the mwansich account but another github account that's also mine. It happened because i already had github desktop installed from earlier where i had to change the settings. I only found out later how to do this. So now my other account is the main contributor.. i used this as an oppurtunity though to get used to github and started to collaborate with myself on the repository from another pc. I can show proof i own that account too in my video, i hope. I later changed the account in the settings of both machines.
+Regarding Github:
+I think i made a mistake setting up vscode because it didn't use the mwansich account but another github account that's also mine. It happened because i already had github desktop installed from earlier where i had to change the settings to use the correct account. I only found out later how to do this. So now my other account is the main contributor.. i used this as an oppurtunity though to get used to github and started to collaborate with myself on the repository from another pc a little bit. I can show proof i own that account too in my video, i hope. I later changed the account in the settings of both machines.
 
 ## Project Structure
 - ``public/``contains favicon and robots.txt
+- ``src/assets``contains two versions of the astro logo for dark- and lightmode
 - ``src/blog`` contains all the blogposts as markdown files
 - ``src/components`` contains several components, basic building blocks of any Astro project, used throughout the whole website
 - ``src/img`` contains all images used throughout the whole website
@@ -18,33 +20,38 @@ I think i made a mistake setting up vscode because it didn't use the mwansich ac
 - ``src/pages`` contains all the actual pages of the website. ``/archive``, ``/posts`` and ``/tags`` are folders because they contain astro files that generate several pages from the blog collection
 - ``src/scripts`` contains a script for the hamburger menu from the tutorial and for the search functionality
 - ``src/styles`` contains the ``global.css`` file used for styling the page
-- the ``content.config.ts`` is used to define a collection \(the blog\) and a schema for that collection
+- the ``src/content.config.ts`` is used to define a collection \(the blog\) and a schema for that collection
+- the rest are astro configuration files for packages, typescript etc., Claude configuration file and readme
+
+## favicon and robots.txt
+I let claude generate the svg to have a custom favicon. The robots.txt, for now, just contains disallow for all user-agents to prevent any bot from accessing the page.
 
 ## Pages
+All the folders and files in this folder are responsible for handling routing, data loading, and overall page layout for every page of the website.
 ### index.astro
 The landing page ``index.html`` or ``index.astro`` features a greeting from the astro tutorial and some introductory text \(the same as above\).
-I added a featured post \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in their frontmatter. Frontmatter attributes are defined in ``content.config.ts``.
+I added a featured post \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in the frontmatter of their .md files. Expected frontmatter attributes are defined in ``content.config.ts``.
 
 ### blog.astro
-The blog page. Shows the most recent posts from the collection sorted by date. Right now it's set to three. Also diplays a search bar to search all blog posts and a link to the archive.
+The blog page. Shows the most recent posts from the collection sorted by date. Right now this is set to three so it only shows the three most recent posts. It also diplays a search bar to search all existing blog posts and a link to the archive.
 
 ### about.astro
-The about page. Show some facts about me, a fake ai generated picture from [thispersondoesnotexist.com](thispersondoesnotexist.com) and some more information.
+The about page. It presents some facts about me, a fake ai generated picture from [thispersondoesnotexist.com](thispersondoesnotexist.com) and some more information. I makes use of astros ability to define and use variables and functions inside the code.
 
 ### search.astro
-Implemented a search function following [this tutorial](https://youtu.be/XnV_2MWqAhQ?feature=shared) using [fuse.js](https://www.fusejs.io/) to search the blog. It is written in the typscript file /scripts/search.ts
+On the search page I implemented a search function following [this tutorial](https://youtu.be/XnV_2MWqAhQ?feature=shared) using [fuse.js](https://www.fusejs.io/) to search the blog. It's reachable by inputting a search term in the search bar on the blog or archive pages. It is written in the typscript file ``/scripts/search.ts``. Title, date, tags, slug and description of every blog posts are searchable. I used fuse.js weighted search and configured the fuse instance \(line 74-102\) so that it searches all the given data and looks for an exact match. It needs input of at least two characters to do anything. The search results update live as the user types in the search bar.
 
 ### pictures.astro
 Just displays all pictures used as images for the blogposts that are stored in the blog collection.
 
-## archive/
-The archive folder contains a \[page\].astro file. This file makes use of astros paginate function to dynamically generate pages for a certain number of archived blogposts. For testing purposes it's one blog post per page.
+### archive/
+The archive folder contains a \[page\].astro file. This file makes use of astros paginate function to dynamically generate pages for a certain number of archived blogposts. For testing purposes it's two blog posts per page. At the top it shows what years the archived blogposts are from.
 
-## posts/
+### posts/
 The posts folder contains a \[...slug\].astro file that generates a static path and individual pages for each md file in ``/src/blog`` \(all posts in the blog collection\) using astros render function.
 
-## tags/
-The tags folder contains an index page that show an index of all tags used in the blog collection and a \[tag\].astro file that generates static paths and pages for all tags containing all posts with that tag.
+### tags/
+The tags folder contains an index page that shows an index of all tags used in the blog collection and a \[tag\].astro file that generates static paths and pages for all tags, each containing all posts with that tag.
 
 ## Pictures
 Images can be stored in the ``/public`` folder but Astro also is able to process and optimize images stored in the ``src``folder with the built-in ``<Image />`` component. Since i wanted to use images from the ``src/img`` folder in my blog posts i had to implement the image helper according to the [docs](https://docs.astro.build/en/guides/images/#images-in-content-collections). The used pictures are analogue photographies i took myself btw.
@@ -55,6 +62,7 @@ Astro makes use of so called components that are the basic building blocks of an
 ### BlogPost
 - part of the Astro tutorial; changed to another structure also including image etc.
 - takes variables url, title, date, image, alt, description and author via Astro.props and outputs a thumbnail for the respective post
+- used on the blog and archive page, individual tag pages and the homepage
 
 ### Footer
 Footer for the BaseLayout; part of the Astro tutorial. I added the Poststats component and the imprint. The script that uses the white or dark astro logo was generated by claude.ai.
@@ -69,7 +77,7 @@ A hamburger icon to replace the navbar on small screens; part of the Astro tutor
 Header used in the BaseLayout; part of the Astro tutorial.
 
 ### morePosts
-The morePosts component is used in the MarkdownPostLayout. It generates a div that shows more random posts from the collection. On bigger screens it shows 3 posts next to each other and on smaller screens it shows 4 posts, either two side by side or one after another. It gets all the posts from the blog collection while filtering out the current post the user is viewing and shuffles the array of posts around randomly, then slicing it to 4 posts. A loop makes four figures as thumbnails that link to these posts. The 4th post gets an id that allows to give it display:none styling when on bigger screens, to achieve the above mentioned effect.
+The morePosts component is used in the MarkdownPostLayout. It generates a div that shows more random posts from the collection. On bigger screens it shows 3 posts next to each other and on smaller screens it shows 4 posts, either two side by side or one after another. It gets all the posts from the blog collection while filtering out the current post the user is viewing and shuffles the array of posts around randomly, then slicing it to 4 posts. A loop makes four figures as thumbnails that link to these posts. The 4th post gets an id that allows to give it display:none styling when on bigger screens, to achieve the above mentioned effect. This all happens on build time, so it's not dynamically changing the posts on refresh on the actual website.
 
 ### Navigation
 The links/routes that appear in the header; part of the Astro tutorial.
@@ -87,14 +95,17 @@ Used to generate links to social sites; part of the Astro tutorial; changed to a
 An icon for light/dark theme toggle with javascript to switch themes by adding or removing a .dark class; part of the Astro tutorial.
 
 ## Posts
-The posts are .md files that consist of a frontmatter and the main content of the blogpost. The file name will be the so called slug how it appears in the URL.
+The blogposts are .md files that consist of a frontmatter and the main content of the blogpost. The file name will be the so called slug how it appears in the URL.
 
 ## Styles
 ### global.css
-The main css file.
+The main css file. I did my own custom styling of all the blog elements for light and darkmode. 
 
 ## Scripts
 ### menu.js
 The toggle script for the hamburger menu button; part of the Astro tutorial.
 ### search.ts
 The script for the search page.
+
+## CLAUDE.md
+Configuration file for claude code

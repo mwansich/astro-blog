@@ -10,7 +10,7 @@ const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => 
 <h2>Explore more Posts</h2>
 <div class="thumbnail-container">
 {randomPosts.map((post: any, index) => 
-<a href={`/posts/${post.id}/`} {...(index === 3 ? { id: "invis" } : {})}><figure class="thumbnail">
+<a href={`/posts/${post.id}/`} {...(index === 3 ? { id: "hidden" } : {})}><figure class="thumbnail">
     <Image
     src={post.data.cover}
     alt={post.data.coverAlt}
@@ -74,7 +74,7 @@ const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => 
     }
 
     @media screen and (min-width: 662px) {
-        #invis {
+        #hidden {
             display: none;
         }
     }
