@@ -7,6 +7,7 @@ const allPosts = await getCollection("blog");
 const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => Math.random() - 0.5).slice(0, 4);
 /* asked claude how to get random posts, recommended this easy method */
 ---
+<div class="morePosts-wrapper">
 <h2>Explore more Posts</h2>
 <div class="thumbnail-container">
 {randomPosts.map((post: any, index) => 
@@ -27,9 +28,14 @@ const randomPosts = allPosts.filter(post => post.id !== currentPost).sort(() => 
         </figcaption>
         </figure></a>)}
 </div>
+</div>
 
 <style>
-   
+
+    .morePosts-wrapper {
+        margin-top: 75px;;
+    }
+
     .thumbnail-container {
         max-width: 100%;
         display: grid;

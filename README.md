@@ -29,7 +29,7 @@ I let claude generate the svg to have a custom favicon. The robots.txt, for now,
 ## Pages
 All the folders and files in this folder are responsible for handling routing, data loading, and overall page layout for every page of the website.
 ### index.astro
-The landing page ``index.html`` or ``index.astro`` features a greeting from the astro tutorial and some introductory text \(the same as above\).
+The landing page ``index.html`` or ``index.astro`` features a greeting from the astro tutorial and some introductory text \(the same as above\). On every refresh a random greeting from a selection of possible words is displayed.
 I added a featured post \(or posts\) section. If there's more than one featured post it will say "Featured Posts", if there's only one it will say "Featured Post". It automatically displays posts that have "featured: yes" in the frontmatter of their .md files. Expected frontmatter attributes are defined in ``content.config.ts``.
 
 ### blog.astro

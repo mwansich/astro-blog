@@ -25,15 +25,21 @@ const { posts, uniqueTags } = Astro.props;
 <BaseLayout pageTitle={`Tag: ${tag}`}>
   <h2>Posts tagged with {tag}</h2>
     {posts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} image={post.data.cover} alt={post.data.coverAlt} description={post.data.description} author={post.data.author} />)}
-  <h2>Explore more tags</h2>
+  <div class="more-tags-wrapper">
+    <h2>Explore more tags</h2>
     <div class="tags">
     {uniqueTags.filter(t => t !== tag).map((othertag) => (
       <p class="tag"><a href={`/tags/${othertag}`}>{othertag}</a></p>
     ))}
   </div>
+  </div>
 </BaseLayout>
 
 <style>
+
+  .more-tags-wrapper {
+    margin-top: 75px;
+  }
 
   .tags {
     margin-top: -15px;
