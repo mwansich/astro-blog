@@ -6,7 +6,7 @@ author: "M"
 cover: "../img/009944001020.jpg"
 coverAlt: "a mysterious structure"
 featured: "no"
-tags: ["astro", "blogging", "markdown"]
+tags: ["astro", "blogging", "markdown", "test"]
 ---
 # Post 0
 This is post 0. Testing markdown.
