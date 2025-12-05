@@ -176,6 +176,10 @@ a {
     margin-bottom: 0.5rem;
 }
 
+.footerlinks a img {
+    vertical-align: middle;
+}
+
 .before-colon {
   color: var(--light-secondary-color);
   background-color: var(--light-main-color);
