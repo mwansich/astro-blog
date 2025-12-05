@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/preact": "^4.1.0",
     "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
     "@fontsource/open-sans": "^5.2.6",
     "astro": "^5.13.7",
     "bootstrap": "^5.3.8",
