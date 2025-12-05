@@ -11,7 +11,7 @@ Regarding Github:
 I think i made a mistake setting up vscode because it didn't use the mwansich account but another github account that's also mine. It happened because i already had github desktop installed from earlier where i had to change the settings to use the correct account. I only found out later how to do this. So now my other account is the main contributor.. i used this as an oppurtunity though to get used to github and started to collaborate with myself on the repository from another pc a little bit. I can show proof i own that account too in my video, i hope. I later changed the account in the settings of both machines.
 
 ## Project Structure
-- ``public/``contains favicon and robots.txt
+- ``public/``contains favicon, robots.txt and stylesheet/png for rss feed (stylesheet from https://github.com/genmon/aboutfeeds/blob/main/tools/pretty-feed-v3.xsl)
 - ``src/assets``contains two versions of the astro logo for dark- and lightmode
 - ``src/blog`` contains all the blogposts as markdown files
 - ``src/components`` contains several components, basic building blocks of any Astro project, used throughout the whole website
@@ -52,6 +52,9 @@ The posts folder contains a \[...slug\].astro file that generates a static path 
 
 ### tags/
 The tags folder contains an index page that shows an index of all tags used in the blog collection and a \[tag\].astro file that generates static paths and pages for all tags, each containing all posts with that tag.
+
+### rss.xml.js
+This file creates an RSS feed at ``site/rss.xml``. It uses [sanitize-html](https://www.npmjs.com/package/sanitize-html) and [markdown-it](https://github.com/markdown-it/markdown-it) to render the markdown body of the .md files as html with astros rss helper.
 
 ## Pictures
 Images can be stored in the ``/public`` folder but Astro also is able to process and optimize images stored in the ``src``folder with the built-in ``<Image />`` component. Since i wanted to use images from the ``src/img`` folder in my blog posts i had to implement the image helper according to the [docs](https://docs.astro.build/en/guides/images/#images-in-content-collections). The used pictures are analogue photographies i took myself btw.

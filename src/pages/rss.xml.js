@@ -17,7 +17,7 @@ export async function GET(context) {
     },
     items: posts.map((post) => ({
       title: post.data.title,
-      pubDate: post.data.pubDate.toISOString().split('T')[0],
+      pubDate: post.data.pubDate,
       description: post.data.description,
       link: `/posts/${post.id}/`,
       content: sanitizeHtml(parser.render(post.body).replace(/href="\//g, `href="${context.site}`), {

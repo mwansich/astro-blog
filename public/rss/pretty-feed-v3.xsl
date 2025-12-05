@@ -130,8 +130,9 @@ This file is in BETA. Please test and contribute to the discussion:
                 </a>
               </h3>
               <small class="text-gray">
-                Published: <xsl:value-of select="pubDate" />
+                Published: <xsl:value-of select="substring-before(substring-after(pubDate, ', '), ' 00:00:00')" />
               </small>
+              <p><xsl:value-of select="description" /></p>
             </div>
           </xsl:for-each>
         </div>
