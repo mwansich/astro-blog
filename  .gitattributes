@@ -1,2 +1,2 @@
 # .gitattributes
-/public/rss/pretty-feed-v3.xsl linguist-vendored=true
+public/rss/pretty-feed-v3.xsl -linguist-vendored
