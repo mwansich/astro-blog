@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /
 
-Sitemap: https://deluxe-frangipane-d091d8.netlify.app//sitemap-index.xml
+Sitemap: https://deluxe-frangipane-d091d8.netlify.app/sitemap-index.xml

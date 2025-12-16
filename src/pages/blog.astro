@@ -15,7 +15,7 @@ const sortedPosts = allPosts.sort((a, b) =>
   new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
 
-// get only the most recent posts, if changed remember to change on archive page too
+// get only the most recent posts (3), if changed remember to change on archive page too
 const recentPosts = sortedPosts.slice(0, 3);
 
 ---
